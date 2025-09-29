@@ -1,37 +1,49 @@
 {
-    "name": "nexcom-chat-app",
-    "version": "0.0.1",
-    "description": "A fullstack chat application made using NextJS and ExpressJS",
-    "scripts": {
-        "dev": "turbo run dev --parallel",
-        "dev:web": "turbo run dev --filter=web",
-        "dev:server": "turbo run dev --filter=server",
-        "typecheck": "tsc --build --pretty --noEmit",
-        "build": "turbo run build",
-        "lint": "turbo run lint -- --max-warnings=0",
-        "format": "prettier --write .",
-        "format:check": "prettier --check .",
-        "test": "turbo run test",
-        "clean": "turbo run clean && rm -rf node_modules"
-    },
-    "author": "Zack Murray",
-    "license": "MIT",
-    "packageManager": "pnpm@10.16.1",
-    "engines": {
-        "node": ">=20.0.0",
-        "pnpm": ">=10.0.0"
-    },
-    "devDependencies": {
-        "@eslint/js": "^9.36.0",
-        "@types/node": "^24.5.2",
-        "eslint": "^9.36.0",
-        "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-import": "^2.32.0",
-        "eslint-plugin-prettier": "^5.5.4",
-        "eslint-plugin-unused-imports": "^4.2.0",
-        "prettier": "^3.6.2",
-        "turbo": "^2.5.8",
-        "typescript": "^5.9.2",
-        "typescript-eslint": "^8.44.1"
-    }
+  "name": "nexcom-chat-app",
+  "version": "0.0.1",
+  "description": "A fullstack chat application made using NextJS and ExpressJS",
+  "type": "module",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "dev:web": "turbo run dev --filter=web",
+    "dev:server": "turbo run dev --filter=server",
+    "typecheck": "tsc --build --pretty --noEmit",
+    "build": "turbo run build",
+    "lint": "turbo run lint -- --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix"
+    ],
+    "*.{ts,tsx,js,jsx,json,md,css}": [
+      "prettier --write"
+    ]
+  },
+  "author": "Zack Murray",
+  "license": "MIT",
+  "packageManager": "pnpm@10.16.1",
+  "engines": {
+    "node": "22.19.0",
+    "pnpm": "10.16.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/node": "^24.5.2",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-unused-imports": "^4.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.3",
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.8",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.1"
+  }
 }
