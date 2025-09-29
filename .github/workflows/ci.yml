@@ -1,41 +1,39 @@
 name: CI
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
 
 jobs:
-  build-and-validate:
-    runs-on: ubuntu-latest
+    build-and-validate:
+        runs-on: ubuntu-latest
 
-    steps:
-      # Checkout The Repo
-      - uses: actions/checkout@v4
+        steps:
+            # Checkout The Repo
+            - uses: actions/checkout@v4
 
-      # Setup PNPM
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10
+            # Setup PNPM
+            - uses: pnpm/action-setup@v4
 
-      # Setup Node
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22.19.0
-          cache: "pnpm"
+            # Setup Node
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22.19.0
+                  cache: "pnpm"
 
-      # Install Dependencies
-      - run: pnpm install --frozen-lockfile
+            # Install Dependencies
+            - run: pnpm install --frozen-lockfile
 
-      # Run Lint
-      - run: pnpm lint
+            # Run Lint
+            - run: pnpm lint
 
-      # Run Type-Checking (No Emit, Jst TS Project References)
-      - run: pnpm typecheck
+            # Run Type-Checking (No Emit, Jst TS Project References)
+            - run: pnpm typecheck
 
-      # Run Tests (TurboRepo Pipeline)
-      - run: pnpm test
+            # Run Tests (TurboRepo Pipeline)
+            - run: pnpm test
 
-      # Build All Apps/Packages
-      - run: pnpm build
+            # Build All Apps/Packages
+            - run: pnpm build
