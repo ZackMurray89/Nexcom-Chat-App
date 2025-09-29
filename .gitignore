@@ -1,0 +1,32 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Turbo / monorepo
+.turbo/
+*.tsbuildinfo
+
+# Build outputs
+dist/
+build/
+coverage/
+*.log
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# Env files (keep only .env.example tracked)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Docker
+docker-data/
+pgdata/
