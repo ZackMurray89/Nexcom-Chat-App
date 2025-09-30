@@ -1,18 +1,8 @@
 {
-    "extends": "./base.json",
-    "compilerOptions": {
-        "jsx": "preserve",
-        "allowJs": true,
-        "jsxImportSource": "react"
-    },
-    "include": [
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx"
-    ],
-    "exclude": [
-        "node_modules",
-        ".next",
-        "dist"
-    ]
+  "extends": "./base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "allowJs": true,
+    "jsxImportSource": "react"
+  }
 }

@@ -1,16 +1,7 @@
 {
-    "extends": "./base.json",
-    "compilerOptions": {
-        "types": [
-            "node"
-        ],
-        "outDir": "dist"
-    },
-    "include": [
-        "src"
-    ],
-    "exclude": [
-        "node_modules",
-        "dist"
-    ]
+  "extends": "./base.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "outDir": "dist"
+  }
 }
